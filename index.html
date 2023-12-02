@@ -8,19 +8,32 @@
     <script defer src="js/index.js"></script>
 </head>
 <body>
-    <h1>El Palacio de la Empanada</h1>
-    <h2>Venta Empanadas</h2>
-    <ol class="listaEmpanadas">
-        <li>Queso</li>
-        <li>Carne</li>
-        <li>Pollo</li>
-        <li>Camaron</li>
-        <li>Queso/Camaron</li>
-        <li>Queso/Choclo</li>
-        <li>Vegetariana</li>
-        <li>Pulpo</li>
-        <li>Papas Fritas</li>
-        <li>Cafe</li>
+    <h1>El PALACIO DE LA EMPANADA</h1>
 
+    <div id="content">
+        <div id="products"></div>
+        
+        <div id="cart-container">
+            <h2>Carrito de Compras</h2>
+            <div id="cart"></div>
+        </div>
+        
+        <div id="checkout-container">
+            <h2>Formulario de Compra</h2>
+            <div id="checkout-form">
+        <h2>Datos del Cliente</h2>
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="address">Dirección:</label>
+        <input type="text" id="address" name="address" required>
+
+        <button id="checkout-button" onclick="realizarPedido()">Realizar Pedido</button>
+    </div>
+</div>
+</div>
 </body>
 </html>
