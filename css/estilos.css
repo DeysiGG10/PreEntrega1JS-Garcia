@@ -99,3 +99,26 @@ button {
     text-decoration:solid;
     margin: 0 10px;
 }
+@media screen and (max-width: 600px) {
+    #content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #products {
+        width: 100%;
+    }
+
+    .product {
+        width: 80%;
+    }
+
+    #cart-container,
+    #checkout-container {
+        width: 80%;
+    }
+
+    .contact-icons {
+        margin-left: 0; /* Ajusta según sea necesario */
+    }
+}
