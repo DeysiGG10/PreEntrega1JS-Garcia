@@ -1,0 +1,35 @@
+{
+    "nombresProductos": {
+      "1": "Empanada de Queso",
+      "2": "Empanada de Carne",
+      "3": "Empanada de Pollo",
+      "4": "Empanada de Camaron",
+      "5": "Empanada de Queso/Camaron",
+      "6": "Empanada de Queso/Choclo",
+      "7": "Empanada Vegetariana",
+      "8": "Empanada de Pulpo",
+      "9": "Papas Fritas"
+    },
+    "preciosProductos": {
+      "1": 1500,
+      "2": 1800,
+      "3": 1800,
+      "4": 2300,
+      "5": 2000,
+      "6": 2000,
+      "7": 2000,
+      "8": 2500,
+      "9": 3000
+    },
+    "images": {
+      "1": "images/empanada_queso.jpg",
+      "2": "images/empanada_carne.jpg",
+      "3": "images/empanada_pollo.jpg",
+      "4": "images/empanada_camaron.jpg",
+      "5": "images/empanada_queso_camaron.jpg",
+      "6": "images/empanada_queso_choclo.jpg",
+      "7": "images/empanada_vegetariana.jpg",
+      "8": "images/empanada_pulpo.jpg",
+      "9": "images/papas_fritas.jpg"
+    }
+  }

@@ -8,7 +8,6 @@ const nombresProductos = {
     7: "Empanada Vegetariana",
     8: "Empanada de Pulpo",
     9: "Papas Fritas",
-   
 };
 
 const preciosProductos = {
@@ -21,7 +20,6 @@ const preciosProductos = {
     7: 2000,
     8: 2500,
     9: 3000,
-
 };
 
 const images = {
@@ -34,7 +32,6 @@ const images = {
     7: 'images/empanada_vegetariana.jpg',
     8: 'images/empanada_pulpo.jpg',
     9: 'images/papas_fritas.jpg',
-  
 };
 
 const products = Object.keys(nombresProductos).map(key => ({
@@ -44,7 +41,7 @@ const products = Object.keys(nombresProductos).map(key => ({
     image: images[key],
 }));
 
-const cart = {};
+let cart = JSON.parse(localStorage.getItem('cart')) || {};
 
 function displayProducts() {
     const productsContainer = document.getElementById('products');
@@ -69,6 +66,24 @@ function displayProducts() {
     });
 
     updateCart();
+}
+async function fetchProductInfo(productId) {
+    try {
+        const response = await fetch(`https://jsonplaceholder.typicode.com/todos/1`);
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+
+        const productInfo = await response.json();
+
+        if (productInfo && productInfo.details) {
+            alert(`Detalles adicionales para ${nombresProductos[productId]}:\n${productInfo.details}`);
+        } else {
+            alert(`No hay detalles adicionales para ${nombresProductos[productId]}`);
+        }
+    } catch (error) {
+        console.error('Error fetching product info:', error);
+    }
 }
 
 function addToCart(product) {
@@ -122,8 +137,27 @@ function updateCart() {
     const totalDiv = document.createElement('div');
     totalDiv.innerHTML = `<strong>Total: $${total.toFixed(2)}</strong>`;
     cartContainer.appendChild(totalDiv);
+
+    localStorage.setItem('cart', JSON.stringify(cart));
 }
+
 function realizarPedido() {
-    alert("Pedido realizado con exito. ¡Gracias por tu compra!");
+    alert("Pedido realizado con éxito. ¡Gracias por tu compra!");
+    cart = {};
+    updateCart();
 }
+document.addEventListener('DOMContentLoaded', () => {
+    displayProducts();
+});
 displayProducts();
+function submitForm() {
+    const form = document.getElementById('orderForm');
+    const isValid = form.reportValidity();
+
+    if (isValid) {
+        
+        alert('Su pedido fue realizado con éxito');
+    } else {
+        alert('Por favor, completa todos los campos obligatorios');
+    }
+}

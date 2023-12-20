@@ -4,34 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>El Palacio de la Empanada</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/estilos.css">
     <script defer src="js/index.js"></script>
+    <script src="https://kit.fontawesome.com/773a0e97ab.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1>El PALACIO DE LA EMPANADA</h1>
+    <h1>EL PALACIO DE LA EMPANADA  <i class="fa-solid fa-wheat-awn"></i></h1>
 
     <div id="content">
         <div id="products"></div>
         
         <div id="cart-container">
-            <h2>Carrito de Compras</h2>
             <div id="cart"></div>
         </div>
         
         <div id="checkout-container">
             <h2>Formulario de Compra</h2>
             <div id="checkout-form">
-        <h2>Datos del Cliente</h2>
-        <label for="name">Nombre:</label>
-        <input type="text" id="name" name="name" required>
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="address">Dirección:</label>
-        <input type="text" id="address" name="address" required>
-
-        <button id="checkout-button" onclick="realizarPedido()">Realizar Pedido</button>
+        
+                <form id="orderForm">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" required>
+                
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+                
+                    <label for="address">Dirección:</label>
+                    <textarea id="address" name="address" required></textarea>
+                
+                    <button type="button" onclick="submitForm()">Enviar Pedido</button>
+                </form>
+                <h3>Sigue nuestras redes</h3>
+                <div class="contact-icons">
+                    <a href="https://www.instagram.com/tu_cuenta_de_instagram" target="_blank" class="contact-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/tu_numero_de_telefono" target="_blank" class="contact-icon"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.facebook.com/tu_pagina_de_facebook" target="_blank" class="contact-icon"><i class="fab fa-facebook"></i></a>
+                </div>
     </div>
 </div>
 </div>
